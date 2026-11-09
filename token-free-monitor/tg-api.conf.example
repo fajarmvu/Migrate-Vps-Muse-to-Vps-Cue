@@ -1,0 +1,6 @@
+# Copy this file to tg-api.conf and fill in your own values.
+# NEVER commit tg-api.conf (it holds your Telegram API credentials).
+# Get api_id / api_hash from https://my.telegram.org
+api_id=
+api_hash=
+phone=

@@ -5,7 +5,10 @@ Wants=network-online.target
 
 [Service]
 Type=oneshot
-User=hatch
+User=root
+# VM replacements run as root with HOME=/root; the monitor script uses $HOME paths,
+# so pin HOME here (survives VM replacement via the watchdog self-heal copy path)
+Environment="HOME=/home/hatch"
 EnvironmentFile=/home/hatch/.config/vps-ssh-proxy-env
 ExecStart=/bin/bash /home/hatch/workspace/hermuse/tg-monitor/tg-link-monitor.sh
 # Do not spam logs on success; script logs to its own file

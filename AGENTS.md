@@ -47,6 +47,9 @@ jalankan prosedur rollback (tujuan berhenti dulu, sumber hidup setelahnya).
 - `scripts/gen-migration-key.sh` — buat kunci SSH ed25519 khusus migrasi.
 - `scripts/vps-ssh.sh` — wrapper SSH via Tailscale ke mesin tujuan.
 - `scripts/proxy-ssh-helper.py` — helper koneksi SSH (lihat README skrip).
+- `scripts/gateway-watch-vps.sh` — watchdog gateway (cek service aktif +
+  koneksi Telegram :443; restart bila perlu; exit 0/1/2/3).
+- `scripts/vps-rsync.sh` — wrapper rsync via jalur SSH yang sama.
 - `scripts/check-prereqs.sh` — validasi prasyarat (wajib lolos).
 - `systemd/` — template unit `app-gateway.service`, `model-router.service`,
   `tunnel@.service`. Ganti placeholder `<USER>`, `<APP_DIR>`, `<PORT>`,
